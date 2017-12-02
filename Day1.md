@@ -22,3 +22,8 @@ Part 2 asks the same, but instead of the list rotating by 1, it's rotating by ha
 I have to fix up `rotateList` to become `Int->[Int]->[Int]` and supply half the list length. Initially my solution didn't work - It actually reversed the new last half because I got my appending in the wrong place, but once that was solved it was fairly straight forward.
 
 Helps that we have guaranteed even length input to work with...
+
+# Later Adjustments
+Looking at another person's solution (@nonphatic@cybre.space) I discovered `drop :: Int -> [a] -> [a]` and `take Int -> [a] -> [a]` as a much better way of rotating the list than the recursive solution I originally created.
+
+So I stole it...

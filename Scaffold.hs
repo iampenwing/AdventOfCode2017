@@ -15,5 +15,6 @@ module Scaffold where
        stringToNumbers l = map (\x -> x - charIntOffset) (map fromEnum l)
 
        rotateList :: Int -> [Int] -> [Int]
-       rotateList 0 l = l
-       rotateList n (x:xs) = rotateList (n - 1) (xs ++ [x])
+       rotateList n l = (drop n l) ++ (take n l) 
+--       rotateList 0 l = l
+--       rotateList n (x:xs) = rotateList (n - 1) (xs ++ [x])
