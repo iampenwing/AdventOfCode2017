@@ -150,7 +150,9 @@ I decided to try setting up a structure where the spiral is a `[[[Int]]]` - basi
 
 Code is in Day3.3.hs and currently isa giving the wrong answer. But it's late. Oh so late...
 
+** Update: Early Morning, Day 5 ** - Code now works - established there was an error in generating the spiral on the last edge of a layer. I missed a test for the penultimate position of edge 3, and got part of the other cases for edge 3 incorrect... bleurgh
 
+So, yeah... Spirals: Hard!
 
 
 

@@ -56,7 +56,8 @@ getTouching spiral
   | (edge == 0) && (position == 1) = [(((spiral!!layer)!!(edge))!!0), (last ((spiral!!(layer - 1)!!3))), (((spiral!!(layer - 1))!!edge)!!0), (((spiral!!(layer - 1))!!edge)!!1)]
   | (position == 1) = [(((spiral!!layer)!!(edge))!!0), (last ((spiral!!(layer - 1)!!(edge - 1)))), (((spiral!!(layer - 1))!!edge)!!0), (((spiral!!(layer - 1))!!edge)!!1)]
   | edge == 0 = [(((spiral!!layer)!!(edge))!!(position - 1))] ++ (take 3 (drop (position - 2) ((spiral!!(layer - 1))!!edge)))
-  | (edge == 3) && ((length ((spiral!!layer)!!0)) /= (length ((spiral!!layer)!!3))) = [(((spiral!!layer)!!(edge))!!(position - 1)), (((spiral!!layer)!!0)!!0)] ++ (take 3 (drop (position - 2) ((spiral!!(layer - 1))!!edge)))
+  | (edge == 3) && ((length (((spiral!!layer)!!0))) - 1) == position = [(((spiral!!layer)!!(edge))!!(position - 1)), (((spiral!!layer)!!0)!!0)] ++ (take 3 (drop (position - 2) ((spiral!!(layer - 1))!!edge)))
+  | (edge == 3) && ((length (((spiral!!layer)!!0))) - 2) == position = [(((spiral!!layer)!!(edge))!!(position - 1)), (((spiral!!layer)!!0)!!0), (((spiral!!(layer-1))!!edge)!!(position - 1)) , (((spiral!!(layer-1))!!edge)!!(position - 2))]
   | otherwise = [(((spiral!!layer)!!(edge))!!(position - 1))] ++ (take 3 (drop (position - 2) ((spiral!!(layer - 1))!!edge)))
   where (layer, edge, position) = getNextEmpty spiral
 
