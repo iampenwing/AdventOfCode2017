@@ -1,24 +1,39 @@
 #!/usr/bin/perl
 
-@inp = ();
-print @inp;
+my @myinput = [0];
+my $d = 0;
+my $n = 0;
+my $pos = 0;
+my $len = 0;
 
 while ($i = <>) {
-    push @inp, chomp($i);
+    my $j = chomp $i;
+#    print "*$i:$d";
+    $myinput[$d] = $i;
+#    print "*$myinput[$d]";
+    $d++;
 }
 
-$n = 0;
-$pos = 0;
-$len = @inp;
+#for $a (@myinput) {
+#    print $a;
+#}
 
-print "** $n ** $pos ** $inp[$pos] ** $len **";
+$len = $d;
+    
+#print "% $myinput[0] % $myinput[1] % $myinput[2] % $myinput[3] % $myinput[4] %%";
+#print "%% @myinput[0] %% @myinput[1] %% @myinput[2] %% @myinput[3] %% @myinput[4] %%";
 
 while ($pos >= 0 && $pos < $len){
-    if ($inp[$pos] >= 3){
-	$inp[$pos] = $inp[$pos]--;
+#    print  "/$pos~$myinput[$pos]&$n";
+    my $pos1 = $pos + $myinput[$pos];
+    if ($myinput[$pos] >= 3){
+#	print "-";
+	$myinput[$pos] -= 1;
     }else{
-	$inp[$pos] = $inp[$pos]++;
+#	print "+";
+	$myinput[$pos] += 1;
     }
-    $n++
+    $n++;
+    $pos = $pos1;
 }
 print $n;
