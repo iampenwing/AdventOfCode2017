@@ -31,3 +31,6 @@ Except that, when it eventually spat out an answer rather than the lovely `Int` 
 But there's tail recursion and Haskell's optimisation means that the stack should surely not be too much of an issue??
 
 I tried out a limit on the number of steps (`part2escape2` - to then run with the new, partially solved state afresh and add the max steps), but it was another long wait and I coded up a quick perl script (eventually) to try and get round the stack problem that way... Still waiting as I type this up...
+
+Gave up in the end and resorted to a perl script... with far too many errors because it's been too long. In the end biggest problem was, I think, trying to use `++`;
+
