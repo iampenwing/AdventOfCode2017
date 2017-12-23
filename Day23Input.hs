@@ -1,0 +1,37 @@
+module Day23Input where
+
+data Instruction = Set (Char, Int) |  Setr (Char, Char) | Sub (Char, Int) | Subr (Char, Char) |  Mul (Char, Int) | Mulr (Char, Char) | Jnz (Char, Int) | Jnzr (Char, Char) | Jnzi (Int, Int) | Jnzir (Int, Char)
+
+input :: [Instruction]
+input = [(Set ('b', 93)),
+         (Setr ('c', 'b')),
+         (Jnz ('a', 2)),
+         (Jnzi (1, 5)),
+         (Mul ('b', 100)),
+         (Sub ('b', (-100000))),
+         (Setr ('c', 'b')),
+         (Sub ('c', (-17000))),
+         (Set ('f', 1)),
+         (Set ('d', 2)),
+         (Set ('e', 2)),
+         (Setr ('g', 'd')),
+         (Mulr ('g', 'e')),
+         (Subr ('g', 'b')),
+         (Jnz ('g',2)),
+         (Set ('f',0)),
+         (Sub ('e', (-1))),
+         (Setr ('g','e')),
+         (Subr ('g', 'b')),
+         (Jnz ('g', (-8))),
+         (Sub ('d', (-1))),
+         (Setr ('g', 'd')),
+         (Subr ('g', 'b')),
+         (Jnz ('g', (-13))),
+         (Jnz ('f', 2)),
+         (Sub ('h',(-1))),
+         (Setr ('g','b')),
+         (Subr ('g', 'c')),
+         (Jnz ('g', 2)),
+         (Jnzi (1,3)),
+         (Sub ('b', (-17))),
+         (Jnzi (1,-23))]
